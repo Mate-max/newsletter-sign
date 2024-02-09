@@ -4,6 +4,9 @@ body{
     align-items: center;
     min-height: 100vh;
     background-color: hsl(234, 29%, 20%);
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    width: 100%;
 }
 
 .app{
@@ -12,6 +15,10 @@ body{
     background-color: hsl(0, 0%, 100%);
     padding-left: 50px;
     border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
 }
 
 .header1{
@@ -34,17 +41,137 @@ body{
 }
 
 .icon-list{
-    width: 3%;
-    height: 3%;
+    width: 4%;
+    height: 4%;
 }
 
 .email-container{
     display: flex;
     flex-direction: column;
     width: 350px;
+    padding-top: 15px;
+}
+
+.btn:hover{
+    background-color: hsl(4, 100%, 67%);
+}
+
+#email{
+    padding: 10px;
+    text-align:justify; 
+    margin-top: 15px;
+    border-radius: 10px;
+    border: 1px solid rgb(99, 99, 99);
 }
 
 .btn{
+    cursor: pointer;
     padding: 10px;
     background-color: hsl(234, 29%, 20%);
+    margin-top: 15px;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
 }
+
+.img-text{
+    display: flex;
+}
+
+.img {
+    flex-shrink: 0; /* Prevent the image from shrinking */
+  }
+
+.img-mobile,
+.img-desktop{
+    width: 85%;
+    height: 85%;
+    display: flex;
+    justify-content: center;
+    order: -1;
+}
+
+.img-mobile{
+    display: none;
+    order: -1;
+}
+
+.success-message{
+    display: none;
+    text-align: center;
+    width: auto;
+    height: auto;
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 40px;
+}
+
+.centered {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+.dismiss-btn{
+    background-color: hsl(234, 29%, 20%);
+    padding: 10px;
+    border-radius: 15px;
+    border: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    color: #fff;
+    cursor: pointer;
+}
+
+.dismiss-btn:hover{
+    background-color: hsl(4, 100%, 67%);
+}
+
+
+/* Media query for 375px width screen */
+@media screen and (max-width: 726px) {
+    .app {
+      padding-left: 10px;
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .header1 {
+      margin-bottom: 10px;
+    }
+  
+    .icon-list {
+      width: 20px;
+      height: 20px;
+    }
+  
+    .email-container {
+      width: 100%;
+    }
+  
+    #email {
+      margin-top: 10px;
+    }
+  
+    .btn {
+      margin-top: 10px;
+    }
+  
+    .img-desktop {
+      display: none; /* Set margin-top to 0 for the image to be at the top */
+    }
+
+    .img-mobile{
+        display: flex;
+        width: 100%;
+        order: -1;
+    }
+  
+    .success-message {
+      width: 100%;
+      height: 100%;
+      padding: 20px;
+    }
+  }

@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
   <title>Frontend Mentor | Newsletter sign-up form with success message</title>
 </head>
 <body>
@@ -13,46 +13,53 @@
   <!-- Sign-up form start -->
   <div class="app">
 
-  <h1 class="header1">Stay updated!</h1>
+    <div class="form-container">
+      <h1 class="header1">Stay updated!</h1>
+      <p>Join 60,000+ product managers receiving monthly updates on:</p>
+      
+      <div class="list">
+        <div class="list-item">
+          <img src="./assets/images/icon-list.svg" alt="icon-list" class="icon-list"/>  
+          <p class="list-item-p">Product discovery and building what matters</p>
+        </div>
 
-  <p>Join 60,000+ product managers receiving monthly updates on:</p>
-  
-  <div class="list">
-  <div class="list-item">
-  <img src="./assets/images/icon-list.svg" alt="icon-list" class="icon-list"/>  
-  <p class="list-item-p">Product discovery and building what matters</p>
-  </div>
+        <div class="list-item">
+          <img src="./assets/images/icon-list.svg" alt="icon-list" class="icon-list"/>  
+          <p class="list-item-p">Measuring to ensure updates are a success</p>
+        </div>
 
-  <div class="list-item">
-    <img src="./assets/images/icon-list.svg" alt="icon-list" class="icon-list"/>  
-  <p class="list-item-p">Measuring to ensure updates are a success</p>
-  </div>
+        <div class="list-item">
+          <img src="./assets/images/icon-list.svg" alt="icon-list" class="icon-list"/>
+          <p class="list-item-p">And much more!</p>
+        </div>
+      </div>
 
-  <div class="list-item">
-    <img src="./assets/images/icon-list.svg" alt="icon-list" class="icon-list"/>
-  <p class="list-item-p">And much more!</p>
-  </div>
-  </div>
+      <div class="email-container">
+        <label for="email" style="color: hsl(234, 29%, 20%);"><b>Email address</b></label>
+        <input type="email" id="email" name="email" placeholder="@company.com" required> 
+        <button class="btn" onclick="showSuccessMessage()">Subscribe to monthly newsletter</button>
+      </div>
+    </div>
 
-  <div class="email-container">
-  <label for="email" style="color: hsl(234, 29%, 20%);"><b>Email address</b></label>
-  <input type="email" id="email" name="email" value="@company.com" style="padding: 10px; text-align: center;"> 
-  <button class="btn">Subscribe to monthly newsletter</button>
-  </div>
-
+    <div class="img">
+      <img src="./assets/images/illustration-sign-up-desktop.svg" alt="img-desktop" class="img-desktop" />
+      <img src="./assets/images/illustration-sign-up-mobile.svg" alt="img-mobile" class="img-mobile" />
+    </div>  
 
   <!-- Sign-up form end -->
 
-  <!-- Success message start -->
-
-  Thanks for subscribing!
-
-  A confirmation email has been sent to ash@loremcompany.com. 
-  Please open it and click the button inside to confirm your subscription.
-
-  Dismiss message
-
-  <!-- Success message end -->
+  
+</div>
+<!-- Success message start -->
+  <div class="success-message" id="successMessage">
+    <img src="./assets/images/icon-list.svg" alt="icon-list" class="success-img" style="width: 50px; height: 50px"/>
+    <h1 style="color: hsl(234, 29%, 20%);">Thanks for subscribing!</h1>
+    <p style="font-size: 16px;">A confirmation email has been sent to <b> <span id="user-email"></span></b>. Please open it and click the button inside to confirm your subscription.</p>
+    <button class="dismiss-btn" id="dismissBtn" onclick="dismissMessage()">Dismiss message</button>
   </div>
+<!-- Success message end -->
+
+
+  <script src="./scripts.js"></script>
 </body>
 </html>
